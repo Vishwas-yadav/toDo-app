@@ -1,0 +1,17 @@
+<div class="border py-4 px-4 mt-4">
+    <h3>Add Items</h3>
+    <div>
+        <app-add-todo (addtodo)="addNewTodo($event)"></app-add-todo>
+    </div>
+</div>
+<div class="bg-light py-4 px-4 mt-4">
+    <h3 class="mt-4">List of Todos</h3>
+    <div *ngIf="this.todo.length===0">
+        No List to display!
+    </div>
+    <div *ngFor="let i of todo" class="container">
+        <app-todo-item [todoi]="i" (deleteTodoi)="deleteTodo($event)"
+            (changeActiveStatus)="changeStatus($event)"></app-todo-item>
+    </div>
+
+</div>

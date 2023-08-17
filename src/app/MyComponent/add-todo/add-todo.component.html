@@ -1,0 +1,23 @@
+<div class="container" >
+    <form (ngSubmit)="onSubmit()">
+        <div>
+          <label for="title" class="form-label">Todo Title*</label>
+          <input type="text" [(ngModel)]="title" (click)="clickedTitle()" [class.border-red]="!errorTitle" class="form-control" id="title" name="title" required>
+          <label for="title" class="form-label text-danger"  [class.invisible]="errorTitle"> *Mandatory field</label>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Todo Description</label>
+          <input type="text" [(ngModel)]="desc" class="form-control" name="desc" id="description" required>
+        </div>
+       
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="mt-1" [class.invisible]="successVisible">
+          <p class="text-success">Task added ✓</p>
+        </div>
+      
+        
+       
+      </form>
+</div>

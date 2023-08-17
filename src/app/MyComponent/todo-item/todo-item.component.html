@@ -1,0 +1,18 @@
+<div class="container card my-4 py-4">
+  <h4 [ngClass]="{'strick-out': todoi.active === false}">{{todoi.title}}</h4>
+  <p [ngClass]="{'strick-out': todoi.active === false}">{{todoi.desc}}</p>
+  <div class="container">
+    <div class="row">
+      <div class="form-check col-6">
+        <input class="form-check-input" type="checkbox" value="" [checked]="!this.todoi.active" id="flexCheckIndeterminate"
+          (click)="checkBoxClicked(todoi)">
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          Mark As Done
+        </label>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-sm btn-danger" (click)="onClick(todoi)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
